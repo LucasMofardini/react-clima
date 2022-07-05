@@ -9,17 +9,12 @@ function App() {
     fetch('https://api.openweathermap.org/data/2.5/weather?id=3448433&appid=a8f8ddee03250606bf203bacf672de48&lang=pt_br&units=metric')
     .then((res)=>{
       if(res.ok){
-        console.log(res)
         return res.json();
       }
       throw new Error('Erro ao fazer a requisição' , res);
     })
     .then((json)=>{
-      console.log({...json, isNull: true});
       setPropriedadesCard(json);
-    })
-    .catch((e)=>{
-      console.log(e);
     })
   },[]);
 
@@ -71,8 +66,8 @@ function App() {
   return (
   <>
     <h1>Previsão do tempo</h1>
-    <div className="">
-      <CardClima propriedades={propriedadesCard}/>
+    <div>
+      {propriedadesCard && <CardClima propriedades={propriedadesCard}/>} 
     </div>
   </>
   );

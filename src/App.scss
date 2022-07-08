@@ -1,0 +1,45 @@
+body {
+  background-color: #efefef;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #2e2e2e; 
+  letter-spacing: 2px;
+}
+small {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  margin-right: 5px;
+  color: #70757a;
+}
+p {
+  color: #2e2e2e; 
+  line-height: 16px;
+  letter-spacing: 2px;
+}
+.container-main {
+  margin: 40px auto;
+  width: 65%;
+  h1 {
+    display: flex;
+    justify-content: center;  
+    letter-spacing: 2px;
+  }
+}
+.container-cards{
+  margin-top: 60px;
+}
+.box-card {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.section-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}

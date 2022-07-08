@@ -1,93 +1,79 @@
-
 .container-card{
-    width: 65%;
-
+    width: 100%;
     display: flex;
-    gap: 10px;
-
-    h2{
-        font-size: 2rem;
-        font-weight: 400;
-    }
-    b{
-        font-weight: 700;
-    }
-    small{
-        font-size: 0.9rem;
-        font-weight: lighter;
-        margin-right: 10px;
-    }
-    p{
-        color: #70757a;
-        
-        line-height: 16px;
-    }
+    padding: 10px 5px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.02);
     
+    &:hover{
+        outline: 2px solid rgba(0,0,0,0.3);
+        border-radius: 10px;
+      }
     .box-1 {
         flex: 1;
-        // background-color: pink;
         display: flex;
         justify-content: center;
-    
+        padding: 10px 5px;
+        // background-color: rgba(0,0,0,0.02);
+        border-radius: 10px;
+
         img {
             height: 100%;
             user-select: none;
         }
     }
     
-    .box-2{
-        // background-color: blue;
-    
-        flex: 2;
+    .box-2{    
+        flex: 4;
         display: flex;
         justify-content: space-between;
+        padding: 10px 5px;
     
         & > div {
-            // background-color: antiquewhite;
             flex: 1;
     
             &.item-info__graus{
-                border-right: 1px solid #70757a;
                 padding: 5px 10px;
-
                 display: flex;
-                flex-direction: column;
                 justify-content: space-between;
 
                 .maxima{
-                    // color: #08d9d6;
                     color: #56e4e2;
-
                     margin-bottom: 5px;
                 }
                 .minima{
-                    // color: #ff2e63;
                     color: #e4869d;
                     margin-top: 5px;
                 }
                 .item-info__minmax{
                     align-self: flex-end;
                 }
+                b{
+                    margin-left: 5px;
+                }
             }
             &.item-info__tempo{
                 border-left: 1px solid #70757a;
                 padding: 5px 10px;
-                // display: flex;
-                // flex-direction: column;
-                // align-items: center;
             }
         }   
     }
     
     .box-3{
-        // background-color: darkgoldenrod;
         flex: 1;
         text-align: right;
-        padding: 5px 5px;
+        padding: 10px 15px;
+        // background-color: rgba(0,0,0,0.02);
+        border-radius: 10px;
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        > h2{
+            display: flex;
+            justify-content: center;
+        }
     }
 }
 

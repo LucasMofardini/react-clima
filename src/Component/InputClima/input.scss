@@ -1,0 +1,14 @@
+#input-search{
+    border: 2px solid rgba(0,0,0,0.3);
+    width: 65%;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 8px 10px;
+
+    transition: 0.2s;
+} 
+#input-search:focus{
+    background-color: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.05);
+    outline: none;
+}

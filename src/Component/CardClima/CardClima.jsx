@@ -2,7 +2,6 @@ import React , {useEffect, useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
-
 import './card.scss';
 
 const CardClima = ({ propriedades }) => {
@@ -27,15 +26,12 @@ const CardClima = ({ propriedades }) => {
             <div className="box-1">
                 <img src={`https://openweathermap.org/img/wn/${infoTempo.image_icon}@2x.png`} alt="Resposta Clima"></img>
             </div>       
-            <div className="item-info box-2">
+            <div className="box-2">
                 <div className="item-info__graus">
-                    <h2>{infoTempo.temp_atual} °C</h2>    
+                    <h1>{infoTempo.temp_atual} °C</h1>    
                     <div className="item-info__minmax">
-                        
-                       
-
-                        <p className="maxima"><FontAwesomeIcon icon={faAngleUp}  /> <b>{infoTempo.temp_maxima} °C</b></p>
-                        <p className="minima"><FontAwesomeIcon icon={faAngleDown}  />  <b>{infoTempo.temp_minima} °C</b></p>   
+                        <p className="maxima"><FontAwesomeIcon icon={faAngleUp}  /><b>{infoTempo.temp_maxima} °C</b></p>
+                        <p className="minima"><FontAwesomeIcon icon={faAngleDown}  /><b>{infoTempo.temp_minima} °C</b></p>   
                     </div>             
                 </div>
                 <div className="item-info__tempo">
@@ -46,11 +42,8 @@ const CardClima = ({ propriedades }) => {
             </div> 
             <div className="box-3">
                     <h2>{infoTempo.nome_cidade}</h2>        
-                    <div>
-                        <p>{infoTempo.descricao_cidade}</p>
-                    </div>
-            </div>
-              
+                    <div><p>{infoTempo.descricao_cidade}</p></div>
+            </div>     
         </div>
     );
 }

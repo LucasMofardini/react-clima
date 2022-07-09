@@ -4,48 +4,65 @@ import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 import './card.scss';
 
-const CardClima = ({ propriedades }) => {
+const CardClima = ({ url }) => {
     const [infoTempo, setInfoTempo] = useState({});
-    
-    useEffect(()=>{
-        setInfoTempo({
-            nome_cidade: propriedades.name,
-            descricao_cidade: propriedades.weather[0].description,
-            image_icon: propriedades.weather[0].icon,
-            temp_atual: propriedades.main.temp,
-            temp_minima: propriedades.main.temp_min,
-            temp_maxima: propriedades.main.temp_max,
-            sensacao_termica: propriedades.main.feels_like,
-            umidade: propriedades.main.humidity,
-            nuvens: propriedades.clouds.all
-        });
+    // const [propriedades, setPropriedades] = useState(null);
 
-    },[propriedades]);
+    useEffect(()=>{
+        // console.log(url);
+      fetch(`${url}`)
+      .then((res)=>{
+        if(res.ok){
+          return res.json();
+        }
+        throw new Error('Erro ao fazer a requisição' , res);
+      })
+      .then((json)=>{
+        // console.log(json);
+        // setPropriedades(json)
+        setInfoTempo({
+            nome_cidade: json.name,
+            descricao_cidade: json.weather[0].description,
+            image_icon: json.weather[0].icon,
+            temp_atual: json.main.temp,
+            temp_minima: json.main.temp_min,
+            temp_maxima: json.main.temp_max,
+            sensacao_termica: json.main.feels_like,
+            umidade: json.main.humidity,
+            nuvens: json.clouds.all
+        });
+      })
+    },[]);
+
     return(
-        <div className="container-card">     
-            <div className="box-1">
-                <img src={`https://openweathermap.org/img/wn/${infoTempo.image_icon}@2x.png`} alt="Resposta Clima"></img>
-            </div>       
-            <div className="box-2">
-                <div className="item-info__graus">
-                    <h1>{infoTempo.temp_atual} °C</h1>    
-                    <div className="item-info__minmax">
-                        <p className="maxima"><FontAwesomeIcon icon={faAngleUp}  /><b>{infoTempo.temp_maxima} °C</b></p>
-                        <p className="minima"><FontAwesomeIcon icon={faAngleDown}  /><b>{infoTempo.temp_minima} °C</b></p>   
-                    </div>             
-                </div>
-                <div className="item-info__tempo">
-                    <p><small>Nuvens: </small><b>{infoTempo.nuvens}% </b></p>
-                    <p><small>Umidade: </small> <b>{infoTempo.umidade}% </b></p>
-                    <p><small>Sensação Térmica: </small> <b>{infoTempo.sensacao_termica} °C</b></p>
-                </div>
-            </div> 
-            <div className="box-3">
-                    <h2>{infoTempo.nome_cidade}</h2>        
-                    <div><p>{infoTempo.descricao_cidade}</p></div>
-            </div>     
-        </div>
+        <>
+        {infoTempo &&
+            <div className="container-card">     
+                <div className="box-1">
+                    <img src={`https://openweathermap.org/img/wn/${infoTempo.image_icon}@2x.png`} alt="Resposta Clima"></img>
+                </div>       
+                <div className="box-2">
+                    <div className="item-info__graus">
+                        <h1>{infoTempo.temp_atual} °C</h1>    
+                        <div className="item-info__minmax">
+                            <p className="maxima"><FontAwesomeIcon icon={faAngleUp}  /><b>{infoTempo.temp_maxima} °C</b></p>
+                            <p className="minima"><FontAwesomeIcon icon={faAngleDown}  /><b>{infoTempo.temp_minima} °C</b></p>   
+                        </div>             
+                    </div>
+                    <div className="item-info__tempo">
+                        <p><small>Nuvens: </small><b>{infoTempo.nuvens}% </b></p>
+                        <p><small>Umidade: </small> <b>{infoTempo.umidade}% </b></p>
+                        <p><small>Sensação Térmica: </small> <b>{infoTempo.sensacao_termica} °C</b></p>
+                    </div>
+                </div> 
+                <div className="box-3">
+                        <h2>{infoTempo.nome_cidade}</h2>        
+                        <div><p>{infoTempo.descricao_cidade}</p></div>
+                </div>     
+            </div>
+        }
+        </>
     );
 }
 
-export default CardClima
+export default CardClima;

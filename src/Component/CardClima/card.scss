@@ -5,11 +5,14 @@
     border-radius: 10px;
     background-color: rgba(0,0,0,0.02);
     min-height: 150px;
-    
+    @media (max-width:768px) {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
     &:hover{
         outline: 2px solid rgba(0,0,0,0.3);
         border-radius: 10px;
-      }
+    }
     .box-1 {
         flex: 1;
         display: flex;
@@ -29,15 +32,29 @@
         display: flex;
         justify-content: space-between;
         padding: 10px 5px;
-    
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
+        h1{  
+            @media (max-width:768px) {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+        }
         & > div {
             flex: 1;
-    
+            @media (max-width:768px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly
+            }
             &.item-info__graus{
                 padding: 5px 10px;
                 display: flex;
                 justify-content: space-between;
-
+                @media (max-width:768px) {
+                    flex-wrap: wrap;
+                }
                 .maxima{
                     color: #56e4e2;
                     margin-bottom: 5px;
@@ -66,7 +83,6 @@
         padding: 10px 15px;
         // background-color: rgba(0,0,0,0.02);
         border-radius: 10px;
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -81,6 +97,11 @@
        justify-content: center;
        align-items: center;
        width: 100%;
+    }
+    .item-desc{
+        @media (max-width:768px) {
+            margin-top: 20px;
+        }
     }
 }
 

@@ -60,7 +60,7 @@ const CardClima = ({ url }) => {
                     </div> 
                     <div className="box-3">
                             <h2>{infoTempo.nome_cidade}</h2>        
-                            <div><p>{infoTempo.descricao_cidade}</p></div>
+                            <div className="item-desc"><p>{infoTempo.descricao_cidade}</p></div>
                     </div> 
                 </>
                 } 

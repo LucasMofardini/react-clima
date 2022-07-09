@@ -24,6 +24,9 @@ p {
 .container-main {
   margin: 40px auto;
   width: 65%;
+  @media (max-width:768px) {
+    width: 80%;
+  }
   h1 {
     display: flex;
     justify-content: center;  

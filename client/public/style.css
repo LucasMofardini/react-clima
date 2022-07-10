@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Google sans";
+    src: local("Google sans"),
+    url("./fonts/google-sans/ProductSans-Regular.woff") format("truetype")
+}
+*{
+    font-family: Google sans;
+}

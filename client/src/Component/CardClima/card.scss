@@ -1,0 +1,107 @@
+.container-card{
+    width: 100%;
+    display: flex;
+    padding: 10px 5px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.02);
+    min-height: 150px;
+    @media (max-width:768px) {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    &:hover{
+        outline: 2px solid rgba(0,0,0,0.3);
+        border-radius: 10px;
+    }
+    .box-1 {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 10px 5px;
+        // background-color: rgba(0,0,0,0.02);
+        border-radius: 10px;
+
+        img {
+            height: 100%;
+            user-select: none;
+        }
+    }
+    
+    .box-2{    
+        flex: 4;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 5px;
+        @media (max-width:768px) {
+            flex-wrap: wrap;
+        }
+        h1{  
+            @media (max-width:768px) {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+        }
+        & > div {
+            flex: 1;
+            @media (max-width:768px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly
+            }
+            &.item-info__graus{
+                padding: 5px 10px;
+                display: flex;
+                justify-content: space-between;
+                @media (max-width:768px) {
+                    flex-wrap: wrap;
+                }
+                .maxima{
+                    color: #56e4e2;
+                    margin-bottom: 5px;
+                }
+                .minima{
+                    color: #e4869d;
+                    margin-top: 5px;
+                }
+                .item-info__minmax{
+                    align-self: flex-end;
+                }
+                b{
+                    margin-left: 5px;
+                }
+            }
+            &.item-info__tempo{
+                border-left: 1px solid #70757a;
+                padding: 5px 10px;
+            }
+        }   
+    }
+    
+    .box-3{
+        flex: 1;
+        text-align: right;
+        padding: 10px 15px;
+        // background-color: rgba(0,0,0,0.02);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        > h2{
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .container-loading{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 100%;
+    }
+    .item-desc{
+        @media (max-width:768px) {
+            margin-top: 20px;
+        }
+    }
+}
+
